@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #f5f7fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.javafx.controller.AdminController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="74.0" prefWidth="870.0" spacing="15" style="-fx-background-color: #2c3e50; -fx-padding: 14 24; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+               <children>
+                  <Text style="-fx-font-family: 'Segoe UI'; -fx-font-size: 22; -fx-fill: #3498db;" text="Admin" />
+                  <Text fill="#14f7e7" style="-fx-font-family: 'Segoe UI'; -fx-font-weight: bold; -fx-font-size: 22; -fx-fill: #ecf0f1;" text="Panel" wrappingWidth="175.67657470703125" />
+               </children>
+            </HBox>
+            <Separator orientation="VERTICAL" style="-fx-background-color: #34495e;">
+               <padding>
+                  <Insets left="10" right="10" />
+               </padding>
+            </Separator>
+            <Label text="Manage Reclamations &amp; Responses" textFill="#0ddb81">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="603.0" prefWidth="240.0" spacing="18" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);" styleClass="sidebar" BorderPane.alignment="CENTER">
+         <children>
+            <Text style="-fx-font-size: 16; -fx-font-weight: bold; -fx-fill: #bdc3c7;" styleClass="sidebar-header" text="ADMINISTRATION" />
+            <Separator style="-fx-background-color: #3498db;" styleClass="line" />
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 8 15; -fx-background-radius: 8;">
+               <children>
+                  <Rectangle arcHeight="2" arcWidth="2" fill="#3498db" height="20" width="4" />
+                  <Button fx:id="allReclamationsBtn" onAction="#showAllReclamations" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 14; -fx-padding: 10 15; -fx-background-radius: 5; -fx-border-radius: 5; -fx-cursor: hand;" styleClass="sidebar-button" text="Reclamations" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 8 15; -fx-background-radius: 8;">
+               <children>
+                  <VBox spacing="10" style="-fx-padding: 5; -fx-background-radius: 5;" />
+               </children>
+            </HBox>
+            <Separator style="-fx-background-color: #3498db;" />
+            <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 8 15; -fx-background-radius: 8;">
+               <children>
+                  <Rectangle arcHeight="2" arcWidth="2" fill="#2ecc71" height="20" width="4" />
+                  <Button fx:id="allResponsesBtn" onAction="#showAllResponses" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-size: 14; -fx-padding: 10 15; -fx-background-radius: 5; -fx-cursor: hand;" text="All Responses" />
+               </children>
+            </HBox>
+            <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/planify.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="backToDashboardBtn" onAction="#backToDashboard" prefHeight="43.0" prefWidth="200.0" style="-fx-background-color: #2c3e50; -fx-text-fill: #ecf0f1; -fx-font-size: 14; -fx-padding: 10 15; -fx-background-radius: 5; -fx-cursor: hand;" text="Back To Dashboard">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <SplitPane dividerPositions="0.6" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white; -fx-padding: 20;">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10">
+                     <children>
+                        <Text style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Reclamations List" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ComboBox fx:id="statusFilterComboBox" prefWidth="150.0" promptText="Filter by Status" style="-fx-background-color: #f5f7fa; -fx-border-color: #e0e0e0; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 6;" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Separator style="-fx-background-color: #e0e0e0;" />
+
+                  <!-- New card-based view for reclamations -->
+                  <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <FlowPane fx:id="reclamationsContainer" hgap="20" vgap="20">
+                           <!-- Reclamation cards will be added dynamically here -->
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white; -fx-padding: 20;">
+               <children>
+                  <Text fx:id="reclamationDetailsTitle" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Reclamation Details">
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Separator style="-fx-background-color: #e0e0e0;" />
+                  <ScrollPane fitToWidth="true" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="detailsContainer" spacing="10" style="-fx-padding: 10;">
+                           <children>
+                              <Label style="-fx-font-size: 14; -fx-text-fill: #7f8c8d;" text="Select a reclamation to view details" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <VBox fx:id="responseContainer" spacing="10">
+                     <children>
+                        <Separator style="-fx-background-color: #e0e0e0;">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Text style="-fx-font-size: 18; -fx-font-weight: bold; -fx-fill: #2c3e50;" text="Add a Response">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextArea fx:id="responseField" prefHeight="100.0" promptText="Type your response here..." style="-fx-background-color: #f5f7fa; -fx-border-color: #e0e0e0; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10;" wrapText="true" />
+                        <HBox alignment="CENTER_RIGHT" spacing="10">
+                           <children>
+                              <Button fx:id="rejectBtn" onAction="#rejectReclamation" style="-fx-background-color: transparent; -fx-text-fill: #e74c3c; -fx-border-color: #e74c3c; -fx-border-width: 1px; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10 20; -fx-cursor: hand;" text="Reject Reclamation" />
+                              <Button fx:id="sendResponseBtn" onAction="#sendResponse" style="-fx-background-color: linear-gradient(to right, #27ae60, #2ecc71); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-padding: 10 20; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 1);" text="Send Response" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

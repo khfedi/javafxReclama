@@ -1,0 +1,125 @@
+/* Main application styles */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #f8f9fa;
+}
+
+/* Button styles */
+.button {
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    -fx-opacity: 0.9;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+/* Text field styles */
+.text-field, .text-area {
+    -fx-background-radius: 5;
+    -fx-border-color: #e1e1e1;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #3498db;
+}
+
+/* Menu navigation buttons */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 8 15;
+    -fx-font-size: 14;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 5;
+}
+
+.nav-button:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+.nav-button-active {
+    -fx-background-color: #e1e1e1;
+    -fx-font-weight: bold;
+}
+
+/* Card styles */
+.reclamation-card {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+}
+
+.reclamation-card:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 8);
+}
+
+/* Scroll pane */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    -fx-pref-height: 12;
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 6;
+}
+
+.scroll-bar > .track {
+    -fx-background-color: transparent;
+}
+
+/* Primary action buttons */
+.primary-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+}
+
+.danger-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+}
+
+/* Title and header styles */
+.section-title {
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-fill: #2c3e50;
+}
+
+/* Rating stars */
+.rating-star {
+    -fx-text-fill: #f1c40f;
+    -fx-font-size: 14;
+}

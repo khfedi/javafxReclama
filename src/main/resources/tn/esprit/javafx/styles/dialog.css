@@ -1,0 +1,95 @@
+/* Dialog styling */
+.dialog-pane {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-padding: 20;
+    padding: 20px;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #00145b;
+    background-color: #00145b;
+    -fx-padding: 15px;
+    padding: 15px;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    color: white;
+    -fx-font-size: 16px;
+    font-size: 16px;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.dialog-pane .content {
+    -fx-padding: 15px;
+    padding: 15px;
+}
+
+.dialog-pane .button-bar {
+    -fx-background-color: white;
+    background-color: white;
+    -fx-padding: 10px;
+    padding: 10px;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #00145b;
+    background-color: #00145b;
+    -fx-text-fill: white;
+    color: white;
+    -fx-background-radius: 4px;
+    border-radius: 4px;
+    -fx-padding: 8px 15px;
+    padding: 8px 15px;
+    -fx-cursor: hand;
+    cursor: pointer;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #1a3a8f;
+    background-color: #1a3a8f;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 1);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-padding: 0;
+    padding: 0;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.scroll-pane > .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.scroll-pane > .scroll-bar:vertical .thumb {
+    -fx-background-color: #00145b;
+    background-color: #00145b;
+    -fx-background-radius: 5em;
+    border-radius: 5em;
+    -fx-background-insets: 0;
+    margin: 0;
+}
+
+.scroll-pane > .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.scroll-pane > .scroll-bar:horizontal .thumb {
+    -fx-background-color: #00145b;
+    background-color: #00145b;
+    -fx-background-radius: 5em;
+    border-radius: 5em;
+    -fx-background-insets: 0;
+    margin: 0;
+}
